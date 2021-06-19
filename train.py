@@ -1,7 +1,6 @@
 import torch
 import Dataset 
 import torch
-import Dataset
 import config 
 import engine
 import params
@@ -69,7 +68,7 @@ def train():
         test_loss = engine.eval_fn(Validation_DataLoader, Model, device)
         print(f"Train Loss = {train_loss} Valid Loss = {test_loss}")
         if test_loss < best_loss:
-            torch.save(Model.state_dict(),config.MODEL_PATH)
+            params.save_checkpoint(Model.state_dict(),config.MODEL_PATH)
             best_loss = test_loss
 
 
