@@ -9,6 +9,19 @@ def optimizer_params(Model):
     return optimizer_parameters   
 
 
+def save_checkpoint(state,filename = "My_Checkpoint.pth.tar"):
+    print("=> Saving Checkpoint")
+    torch.save(state,filename)
+
+
+def load_checkpoint(checkpoint):
+    print("=> Loading Checkpoint")
+    Model = model.BTSC()
+    myModel = Model.load_state_dict(checkpoint["state_dict"])
+    # optimizer.load_state_dict(checkpoint["optimizer"])
+    return myModel
+
+
 
 
 
