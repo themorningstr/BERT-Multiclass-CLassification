@@ -47,8 +47,8 @@ class TextDataset:
             "targets" : torch.tensor(self.targets,dtype = torch.int64)
         }
 
-def createDataset(self):
-    dataset = TensorDataset(self.input_id,self.attention_mask,self.label)
+def createDataset(input_id,attention_mask,label):
+    dataset = TensorDataset(input_id,attention_mask,label)
     return dataset
 
 
